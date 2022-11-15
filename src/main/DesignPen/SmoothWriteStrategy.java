@@ -1,5 +1,5 @@
-public class SmoothtWriteStrategy implements WriteStrategy {
+public class SmoothWriteStrategy implements WriteStrategy {
     public void write() {
-        System.out.println("Writing Smoothly...")
+        System.out.println("Writing Smoothly...");
     }
 }

@@ -5,7 +5,7 @@ public abstract class Pen {
     private String brand;
     private double length;
 
-    public void Pen(WriteStrategy writeStrategy) {
+    public Pen(WriteStrategy writeStrategy) {
         this.writeStrategy = writeStrategy;
     }
     
@@ -21,7 +21,7 @@ public abstract class Pen {
         this.name = name;
     }
 
-    public Strign getame() {
+    public String getName() {
         return this.name;
     }
 
@@ -41,13 +41,15 @@ public abstract class Pen {
         return this.brand;
     }
 
-    public void setLength(String length) {
+    public void setLength(double length) {
         this.length = length;
     }
 
-    public String getLength() {
+    public double getLength() {
         return this.length;
     }
-    public abstract void write();
+    public void write() {
+        this.writeStrategy.write();
+    }
 
 }
