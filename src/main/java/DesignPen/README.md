@@ -56,6 +56,8 @@ We can have three other classes called Refill, Ink and Nib. Refill will have att
 
 We can represent writing behaviour through an interface called WriteBehaviour, which will have a write() method. Since all pens have a writing behaviour, we will include an attribute called writeStrategy in the Pen class. 
 
-In all the write methods of the subclasses of Pen, we will call strategy.write(), where strategy is the object of the respective strategy class applicable in the subclass.
+In all the write methods of the subclasses of Pen, we will call strategy.write(), where strategy is the object of the respective strategy class applicable in the subclass. An alternative is to not have write method in the subclasses, but to have the write method only in the parent Pen class.
+
+
 
 
