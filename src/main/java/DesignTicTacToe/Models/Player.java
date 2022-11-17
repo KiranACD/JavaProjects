@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Player {
     private Symbol symbol;
-    private PlayerType playertype;
+    private PlayerType playerType;
     private String name;
 
     public String getName() {
@@ -15,16 +15,16 @@ public class Player {
         return this.symbol;
     }
 
-    public PlayerType getPlayertype() {
-        return this.playertype;
+    public PlayerType getPlayerType() {
+        return this.playerType;
     }
 
     public void setSymbol(Symbol symbol) {
         this.symbol = symbol;
     }
 
-    public void setPlayertype(PlayerType playertype) {
-        this.playertype = playertype;
+    public void setPlayerType(PlayerType playerType) {
+        this.playerType = playerType;
     }
 
     public void setName(String name) {

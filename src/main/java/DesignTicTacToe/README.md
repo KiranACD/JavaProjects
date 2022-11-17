@@ -109,7 +109,13 @@ Once models are done, we should focus on how users are going to interact with th
 
 To avoid null pointer exceptions, we should always define constructors that will initialize the attributes of the class.
 
+The game class requires a builder for a few reasons. 
 
+1. There are many attributes.
+2. We need to validate that every player must have a different symbol.
+
+
+We always pass services through injection, not models.
 
 
 

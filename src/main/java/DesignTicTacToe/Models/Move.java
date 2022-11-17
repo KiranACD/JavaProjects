@@ -11,20 +11,20 @@ public class Move {
         this.player = player;
     }
 
+    public int getRow() {
+        return this.row;
+    }
+
+    public int getColumn() {
+        return this.column;
+    }
+
     public void setRow(int row) {
         this.row = row;
-    }
-    
-    public int getRow() {
-        retun this.row;
     }
 
     public void setColumn(int column) {
         this.column = column;
-    }
-    
-    public int getColumn() {
-        retun this.column;
     }
 
     public void setPlayer(Player player) {

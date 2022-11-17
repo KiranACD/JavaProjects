@@ -1,7 +1,7 @@
-package DesignTicTacToe.Strategies.botwinningstrategy;
+package DesignTicTacToe.Strategies.winningstrategy;
 
 import DesignTicTacToe.Models.Board;
 
-public class BotWinningStrategy {
+public interface WinningStrategy {
     Boolean checkVictory(Board board);
 }

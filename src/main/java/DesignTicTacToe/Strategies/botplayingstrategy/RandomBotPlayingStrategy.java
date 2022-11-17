@@ -1,4 +1,4 @@
-package DesignTicTacToe.Strategies;
+package DesignTicTacToe.Strategies.botplayingstrategy;
 
 import DesignTicTacToe.Models.Board;
 import DesignTicTacToe.Models.Player;

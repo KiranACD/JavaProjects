@@ -2,7 +2,7 @@ package DesignTicTacToe.Factories;
 
 public class BotPlayingStrategyFactory {
 
-    public static BotPlayingStrategy getBotPlayingStrategy(BotDifficultyLevel botdifficultylevel) {
+    public static BotPlayingStrategy getBotPlayingStrategyByDifficulty(BotDifficultyLevel botdifficultylevel) {
         return new RandomBotPlayingStrategy();
     }
 }
