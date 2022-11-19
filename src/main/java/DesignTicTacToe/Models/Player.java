@@ -34,10 +34,10 @@ public class Player {
     public Move makeMove(Board board) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("What row (starting from 0)?")
+        System.out.println("What row (starting from 0)?");
         Integer row = scanner.nextInt();
 
-        System.out.println("What column (starting from 0)?")
+        System.out.println("What column (starting from 0)?");
         Integer column = scanner.nextInt();
 
         Move move = new Move(row, column, this);

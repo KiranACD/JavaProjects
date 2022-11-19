@@ -1,9 +1,13 @@
 package DesignTicTacToe.Models;
 
 import DesignTicTacToe.Exceptions.DuplicateSymbolException;
-import java.utils.List;
-import java.utils.ArrayList;
-import java.utils.HashSet;
+import DesignTicTacToe.Strategies.winningstrategy.GameWinningStrategy;
+import DesignTicTacToe.Factories.GameWinningStrategyFactory;
+import DesignTicTacToe.Factories.PlayerFactory;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Game {
 
@@ -26,11 +30,38 @@ public class Game {
         return new Builder();
     }
 
+    public List<Player> getPlayers() {
+        return this.players;
+    }
+
+    public Board getBoard() {
+        return this.board;
+    }
+
+    public List<Move> getMoves() {
+        return this.moves;
+    }
+
+    public List<GameWinningStrategy> getGameWinningStrategies() {
+        return this.gameWinningStrategies;
+    }
+
+    public int getLastMovedPlayerIndex() {
+        return this.lastMovedPlayerIndex;
+    }
+
+    public Player getWinner() {
+        return this.winner;
+    }
+
     public void makeMove() {
+
         this.board.display();
         this.lastMovedPlayerIndex += 1;
         this.lastMovedPlayerIndex %= this.players.size();
 
+        String name = this.players.get(this.lastMovedPlayerIndex).getName();
+        System.out.println(name + "'s turn...");
         Move potentialMove = this.players.get(this.lastMovedPlayerIndex).makeMove(this.board);
 
         if (this.board.getCell(potentialMove.getRow(), potentialMove.getColumn()).getPlayer() != null) {
@@ -43,7 +74,7 @@ public class Game {
         this.filledCells += 1;
 
         for (GameWinningStrategy gameWinningStrategy: this.gameWinningStrategies) {
-            if (gameWinningStrategy.checkVictory(this.board)) {
+            if (gameWinningStrategy.checkVictory(this.board, potentialMove)) {
                 this.gameStatus = GameStatus.ENDED;
                 this.winner = this.players.get(lastMovedPlayerIndex);
                 return;
@@ -53,7 +84,6 @@ public class Game {
         if (this.filledCells == (this.players.size() + 1) * (this.players.size() + 1)) {
             this.gameStatus = GameStatus.DRAW;
         }
-
     }
 
     public static class Builder {
@@ -61,7 +91,12 @@ public class Game {
         private List<GameWinningStrategy> gameWinningStrategies;
 
         public Builder setPlayers(List<Player> players) {
-            this.players = players;
+            this.players = new ArrayList<>();
+            for (Player player: players) {
+                String name = player.getName();
+                Character character = player.getSymbol().getCharacter();
+                this.players.add(PlayerFactory.createHumanPlayer(name, character));
+            }
             return this;
         }
 
@@ -92,8 +127,9 @@ public class Game {
             game.gameWinningStrategies = this.gameWinningStrategies;
             game.players = this.players;
             game.moves = new ArrayList<>();
-            game.board = new Board(players.size() - 1);
+            game.board = new Board(this.players.size()+1);  
             game.lastMovedPlayerIndex = -1;
+            game.winner = null;
 
             return game;
         }

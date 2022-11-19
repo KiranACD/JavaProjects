@@ -1,5 +1,11 @@
 package DesignTicTacToe.Factories;
 
+import DesignTicTacToe.Models.Player;
+import DesignTicTacToe.Models.Bot;
+import DesignTicTacToe.Models.Symbol;
+import DesignTicTacToe.Models.BotDifficultyLevel;
+import DesignTicTacToe.Models.PlayerType;
+
 public class PlayerFactory {
 
     public static Player createHumanPlayer(String name, Character character) {

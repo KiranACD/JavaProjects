@@ -1,5 +1,7 @@
 package DesignTicTacToe.Models;
 
+import DesignTicTacToe.Strategies.botplayingstrategy.BotPlayingStrategy;
+import DesignTicTacToe.Factories.BotPlayingStrategyFactory;
 
 public class Bot extends Player{
     private BotDifficultyLevel botdifficultylevel;
@@ -11,6 +13,7 @@ public class Bot extends Player{
     }
 
     public Move makeMove(Board board) {
-        this.botplayingstrategy.makeMove(board, this);
+        Move move = this.botplayingstrategy.makeMove(board, this);
+        return move;
     }
 }

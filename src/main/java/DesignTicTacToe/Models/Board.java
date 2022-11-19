@@ -1,7 +1,7 @@
 package DesignTicTacToe.Models;
 
-import java.utils.ArrayList;
-import java.utils.List;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Board {
     private int dimension;
