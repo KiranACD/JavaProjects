@@ -4,7 +4,7 @@ This is a game design problem. The ideas that we discuss in this project will al
 
 ## Overview
 
-There two possibilities when faced with a new LLD system design problem. We either know the system, or we dont. 
+There are two possibilities when faced with a new LLD system design problem. We either know the system, or we dont. 
 
 In case we know the system, we have to find out if we are on the same page as the interviewer/stakeholder with respect to the system. So, we have to find out if we are thinking of the same game. Once that is estabished, we need to find out the scope of the system.
 
